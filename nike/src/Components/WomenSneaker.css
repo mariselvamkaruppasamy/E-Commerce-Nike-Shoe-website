@@ -1,0 +1,86 @@
+.women-header{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(157, 47, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
+.women-sneaker{
+    margin-top: 20px;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.women-link{
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.women-header h4{
+    text-align: center;
+    font-weight: 800;
+}
+
+.women-header p{
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .women-sneaker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shoesCards {
+        max-width: 100%;
+    }
+
+    .women-header h4 {
+        font-size: 20px;
+    }
+
+    .women-header p {
+        font-size: 16px;
+    }
+
+    .women-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .women-header h4 {
+        font-size: 18px;
+    }
+
+    .women-header p {
+        font-size: 14px;
+    }
+
+    .men-link {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .women-sneaker {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}

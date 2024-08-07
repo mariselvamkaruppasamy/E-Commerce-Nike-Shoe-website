@@ -1,0 +1,82 @@
+.Tags{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+.div1{
+    width: 100%;
+    height: 250px;
+    background: url('../Images/shoe-tags1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+}
+
+.div2{
+    width: 100%;
+    height: 250px;
+    background: url('../Images/shoe-tags3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.div1 h6{
+    color: aqua;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+
+.div2 h6{
+    color: yellow;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+.div1 h1{
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 3px black;
+}
+
+.div2 h1{
+    color: aqua;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 3px black;
+}
+
+
+.div1 button {
+    padding: 3px 10px;
+    border: 1px solid black;
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
+}
+
+.div2 button {
+    padding: 3px 10px;
+    border: 1px solid black;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+

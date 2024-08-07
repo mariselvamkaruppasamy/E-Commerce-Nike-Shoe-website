@@ -1,0 +1,47 @@
+.adLog-ctn{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/src/Images/admin-bg1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.alog-frm{
+    height: 400px;
+    width: 450px;
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alog-frm input{
+    padding: 5px 20px;
+    margin: 13px;
+}
+
+.alog-frm button{
+    padding: 7px 45px;
+    background-color: rgb(76, 35, 5);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.alog-frm h2{
+    color: #fff;
+    font-weight: 900;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px black;
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "id":"1",
+        "product":"Nike Victory 2 Electric",
+        "price":"₹7,199",
+        "old":"₹11,999",
+        "offer":"-40%",
+        "img":"../src/Images/bs-1.png"
+    },
+
+    {
+        "id":"2",
+        "product":"Nike GX 2 Elite Electric",
+        "price":"₹2,249",
+        "old":"₹4,999",
+        "offer":"-55%",
+        "img":"../src/Images/bs-2.png"
+    },
+
+    {
+        "id":"3",
+        "product":"Nike Air Zoom Victory Electric",
+        "price":"₹4,199",
+        "old":"₹6,999",
+        "offer":"-40%",
+        "img":"../src/Images/bs-3.png"
+    },
+
+    {
+        "id":"4",
+        "product":"Nike Revolution 7",
+        "price":"₹2,019",
+        "old":"₹4,299",
+        "offer":"-53%",
+        "img":"../src/Images/bs-5.png"
+    }
+]

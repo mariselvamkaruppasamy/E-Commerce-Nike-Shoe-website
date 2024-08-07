@@ -1,0 +1,138 @@
+Men : 
+    1. Vaporfly 3 Electric -> 6999 -> 4339 -> 38
+    2. Pegasus 41 Electric -> 8999 -> 5399 -> 40
+    3. InfinityRN 4 Electric -> 11999 -> 7199 -> 40
+    4. Invincible 3 Electric -> 11999 -> 7449 -> 37
+    5. G.T. Cut 3 EP Electric -> 5999 - 2999 -> 50
+    6. Air Max Dn -> 4999 -> 2249 -> 55
+    7. Zoom Vomero 5 -> 4299 -> 2229 -> 48
+    8. V2K Run -> -> 3999 -> 2199 -> 45
+    9. Streakfly -> 8999 -> 6749 -> 25
+    10. Air Humara -> 4499 -> 2549 -> 43
+
+    Sports
+
+women : 
+    1. Alphafly 3 Electric ->
+    2. Infinity Tour 2 Electric ->
+    3. P-6000 Premium -> ?
+    4. Tech Hera ->
+    5. Nike AL8 ->
+    6. Killshot 2 ->
+    7. Metcon 9 ->
+    8. Victory 2 Electric ->
+    9. Journey Run -> ?
+    10. Phoenix Waffle -> 
+
+sports : 
+    1. Phantom Luna 2 Electric
+    2. Tiempo 10 Elite Electric
+    3. Mercurial Superfly 10 Elite
+    4. Phantom GX 2 Elite
+    5. Lunar Gato II
+    6. Sabrina 2 EP
+    7. Elevate 3
+    8. Nike G.T. Cut 3 EP
+    9. Luka 3 PF
+    10. JA 1 EP
+
+
+
+
+<Route path='/' element={<Home />} />
+            <Route path='/alogin' element={<AdminLogin />} />
+            <Route path='/acontrol' element={<AdminControl />} />
+            <Route path='/ulogin' element={<UserForm />} />
+            <Route path='/usign' element={<UserSignup />} />
+            <Route path='/men' element={<MenSneaker />} />
+            <Route path='/women' element={<WomenSneaker />} />
+            <Route path='/sports' element={<Sports />} />
+            <Route path='/cdetails/:id' element={<CardDetails />} />
+            <Route path='/addcart' element={<AddCart />} />
+
+
+
+const removeFromCart = async () => {
+    if (userId) {
+      try {
+        await axios.post(`http://localhost:4500/userdata/remove/${userId}`, {
+          userProduct: id,
+        });
+        alert('Product Removed from Cart');
+      } catch (error) {
+        console.error('Error removing from Cart', error.response.data);
+        alert('Failed to remove from Cart');
+      }
+    }
+  };
+
+
+
+
+
+
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { Container } from 'react-bootstrap';
+import { cartDetailsContext } from '../App';
+
+export const AddCart = () => {
+  
+  const [data, setData] = useState([]);
+  const [insrt, setInsrt] = useState([]);
+  const {userId, setUserId, userProduct, setUserProduct} = useContext(cartDetailsContext);
+
+  useEffect(()=>{
+    const getData = async ()=>{
+      await axios.get("http://localhost:4500/product/productlistz")
+      .then(res => setData(res.data))
+      .catch(err => console.log(err))
+    };
+
+    getData()
+  }, [])
+
+
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      try{
+        const response = await axios.post(``);
+        const {cartList} = response.data;
+        localStorage.setItem('cartlist', JSON.stringify(cartList));
+        setInsrt(cartList)
+      }
+      catch (err){
+        console.error(err)
+      }
+    }
+  })
+
+  return (
+    <Container className='add-cart'>
+      <h2>Your Cart</h2>
+      {error ? (
+        <p>{error}</p>
+      ) : products.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <div className='cart-products'>
+          {products.map(product => (
+            <div key={product._id} className='cart-product'>
+              <img
+                src={`http://localhost:4500/${product.productImage[0]}`}
+                alt={product.productName}
+                height={'100px'}
+                width={'100px'}
+              />
+              <div className='product-details'>
+                <h4>{product.productName}</h4>
+                <p>Price: ₹{product.productAmount}</p>
+                <p>Quantity: 1</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </Container>
+  );
+};

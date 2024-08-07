@@ -1,0 +1,81 @@
+.amb-head h2{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: red;
+    text-shadow: 1px 1px 1px black;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    cursor: pointer;
+}
+
+.card{
+    width: 100%;
+    max-width: 300px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    background-color: white;
+}
+
+.card img{
+    width: 100%;
+    height: 280px;
+    display: block;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-content{
+    opacity: 1;
+}
+
+.card-content h4{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.card-content p{
+    margin: 10px 0 0;
+}
+
+.sl-icons{
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+@media screen and (max-width: 1024px){
+    .card-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
